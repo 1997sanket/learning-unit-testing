@@ -15,8 +15,19 @@ class MathUtilsTest {
         double expected = 12.566370614359172;
 
         //I'm asserting "telling" jUnit that actual and expected are equal.
-        assertEquals(expected, actual);
+        //We can add this extra message inorder for future developers to understand what this method is supposed to do exactly and make their lives easier.
+        assertEquals(expected, actual, "This method should return area of a circle");
     }
 
 
+    @Test
+    void divide() {
+        MathUtils mathUtils = new MathUtils();
+
+        //I'm telling jUnit that this method should throw an Exception.
+        assertThrows(ArithmeticException.class, ()->mathUtils.divide(1,0), "Dividing by zero should throw an Arithmetic Exception");
+
+//        assertThrows(NullPointerException.class, ()->mathUtils.divide(1,0));
+
+    }
 }
