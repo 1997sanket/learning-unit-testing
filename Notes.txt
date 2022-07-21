@@ -1,0 +1,7 @@
+1. jUnit creates new Test class instance for every @Test method run.
+
+2. LifeCycle hooks:
+	@BeforeEach and @AfterEach runs before and after every method run respectively.
+	@BeforeAll and @AfterAll runs before the Test class' instance is created and when the instance is destroyed.
+		- So how can you call a method before even the object is initialized ? 
+			ANS = make the method static.
